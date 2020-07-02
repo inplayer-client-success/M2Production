@@ -24,40 +24,17 @@
 
   <!-- css style -->
   <link rel="stylesheet" href="css/style.min.css">
-
   <!-- hamburger menu animation -->
-  <link href="js/hamburgers-master/dist/hamburgers.css" rel="stylesheet">
+  <link href="css/hamburgers.min.css" rel="stylesheet">
 
   <!-- animate css -->
-  <link href="css/animate.css-master/animate.css" rel="stylesheet">
-
+  <link href="css/animate.min.css" rel="stylesheet">
   <!-- inplayer script -->
   <script type="text/javascript" src="https://assets.inplayer.com/paywall/latest/paywall.min.js"></script>
 
 
-
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,900|Roboto:300,400" rel="stylesheet">
-  <!-- scroll reveal -->
-  <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
 
-  <script>
-    function getParameterByName(name, url) {
-      if (!url) url = window.location.href;
-      name = name.replace(/[\[\]]/g, "\\$&");
-      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-      if (!results) return null;
-      if (!results[2]) return '';
-      return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
-
-    var config = {
-      package_id: "106108",
-      item_id: getParameterByName('id'),
-      merchant_uuid: "cc0cb013-9b32-4e3d-a718-8f9b69d49908",
-      service_url: "https://services.inplayer.com"
-    }
-  </script>
 </head>
 
 <body>
@@ -101,8 +78,7 @@
       <span class="v-line"></span>
     </div>
     <div class="package" id="packages">
-      <div id="package-items">
-      </div>
+      <div id="package-items-106108" class="package-items"></div>
     </div>
   </div>
 
