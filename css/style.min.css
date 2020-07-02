@@ -641,7 +641,7 @@ a.link {
 }
 
 .package-container .package .item-label {
-  color: var(--primary);
+  color: var(--secondary);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -888,12 +888,11 @@ body #nav-wrapper .nav-container .nav-logo .logo {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: baseline;
-        -ms-flex-align: baseline;
-            align-items: baseline;
-    padding-left: 40px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     position: fixed;
-    background: #844763;
+    background: var(--dark);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -928,5 +927,8 @@ body .about .wrapper p {
   color: #000;
   max-width: 600px;
   margin: 0 auto;
+}
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+  background-color: #fff !important;
 }
 /*# sourceMappingURL=style.min.css.map */

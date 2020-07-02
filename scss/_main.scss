@@ -119,10 +119,9 @@ body{
         ul {
           flex-direction: column;
           justify-content: center;
-          align-items: baseline;
-          padding-left: 40px;
+          align-items: center;
           position: fixed;
-          background: #844763;
+          background: var(--dark);
           background-position: center;
           background-size: cover;
           height: 100vh;
@@ -168,3 +167,6 @@ body{
 
 } //body
 /*# sourceMappingURL=style.scss.map */
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before  {
+  background-color: #fff !important;
+}
