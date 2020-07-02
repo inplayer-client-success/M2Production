@@ -405,7 +405,6 @@ a.link {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 0;
   }
   #header .header-content .text {
     width: calc(100% - 50px);
@@ -417,9 +416,6 @@ a.link {
 }
 
 @media (max-width: 520px) {
-  #header .header-content {
-    padding: 0px;
-  }
   #header .header-content .text h1 {
     font-size: 3.5em;
   }
@@ -463,8 +459,7 @@ a.link {
 }
 
 #faq .faq-info ul li a.toggle:hover {
-  color: #fff;
-  background: var(--secondary);
+  background: #e0e0e0;
 }
 
 #faq .faq-info ul li a.toggle.active {
@@ -916,6 +911,7 @@ body #nav-wrapper .nav-container .nav-logo .logo {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding: 0;
   }
 }
 
