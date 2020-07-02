@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="img/logo2.png">
+    <title>M2 Production</title>
+
+    <!-- og tags -->
+    <meta property="og:url"           content="" />
+    <meta property="og:title"         content="" />
+    <meta property="og:description"   content="" />
+    <meta property="og:image"         content="" />
+
+    <!-- twitter tags -->
+    <meta property="twitter:title" content="">
+    <meta property="twitter:description" content="">
+    <meta property="twitter:image" content="">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- css style -->
+    <link rel="stylesheet" href="css/style.min.css">
+
+    <!-- hamburger menu animation -->
+    <link href="js/hamburgers-master/dist/hamburgers.css" rel="stylesheet">
+
+    <!-- animate css -->
+      <link href="css/animate.css-master/animate.css" rel="stylesheet">
+
+ <!-- inplayer script -->
+ <script type="text/javascript" src="https://assets.inplayer.com/paywall/latest/paywall.min.js"></script>
+
+
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,900|Roboto:300,400" rel="stylesheet">
+    <!-- scroll reveal -->
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+
+    <script>
+        function getParameterByName(name, url)
+        {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        var config = {
+            package_id: "106108",
+            item_id: getParameterByName('id'),
+            merchant_uuid: "cc0cb013-9b32-4e3d-a718-8f9b69d49908",
+            service_url: "https://services.inplayer.com"
+        }
+        </script>
+  </head>
+  <body>
+
+
+
+    <div id="nav-wrapper" >
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo page-scroll">
+          <img class="logo" src="img/logo2.png" alt="logo">
+        </a>
+        <ul id="menu" class="animated slideOutUp">
+          <li> <a href="index.html">Home</a> </li>
+          <li> <a href="#videos" class="page-scroll">Videos</a> </li>
+          <li> <a href="#about" class="page-scroll">About</a> </li>
+          <li> <a href="#faq" class="page-scroll">FAQ</a> </li>
+          <li> <a href="#footer" class="page-scroll">Contact</a> </li>
+          <li><a  class="login-button button inplayer-paywall-login" >Login</a> </li>
+          <li> <a class=" login-button button inplayer-paywall-logout"> Logout</a> </li>
+        </ul>
+      </div>
+      <button class="hamburger hamburger--squeeze" type="button" id="toggle">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </div>
+
+
+
+    <div id="header" class="bg-item-img">
+        <div class="header-content section">
+          <div id="preview-item" ></div>
+        </div>
+    </div>
+
+    <div class="package-container section" id="videos">
+      <div class="heading mb-4">
+        <span class="v-line"></span>
+        <h2 class=" title">Related</h2>
+        <span class="v-line"></span>
+      </div>
+      <div class="package" id="packages">
+        <div id="package-items">
+        </div>
+      </div>
+    </div>
+
+    <div class="about bg-white" id="about">
+      <div class="wrapper section">
+        <div class="heading mb-4">
+          <span class="v-line"></span>
+          <h2 class="title">About us</h2>
+          <span class="v-line"></span>
+        </div>
+        <p>Meditation is a precise technique for resting the mind and attaining a state of consciousness that is totally different from the normal waking state. It is the means for fathoming all the levels of ourselves and finally experiencing the center of consciousness within. Meditation is not a part of any religion; it is a science, which means that the process of meditation follows a particular order, has definite principles, and produces results that can be verified.</p>
+      </div>
+    </div>
+
+    <!-- FAQ -->
+    <div id="faq" class="section">
+      <div class="faq-header">
+        <div class="heading mb-4">
+          <span class="v-line"></span>
+          <h2 class="title">Need Help?</h2>
+          <span class="v-line"></span>
+        </div>
+      </div>
+
+      <div class="faq-info">
+
+      <!-- second column -->
+
+        <ul class="accordion">
+
+          <!-- first question -->
+          <li>
+            <a href="#" class="toggle">How do I create an account?</a>
+            <div class="inner ">
+              <p><strong>Step 1.</strong> Press the image of the content you wish to watch or press <strong>Sign up now to buy your digital pass. </strong></p>
+              <p><strong>Step 2.</strong> Press the <strong>Watch</strong> button and/or select the <strong>Sign up</strong> option at the top of the form.</p>
+              <p><strong>Step 3.</strong>  Fill in the form with your <strong>full name, email address</strong> and <strong>password</strong> and press the <strong>Register</strong> button.</p>
+              <p>You will receive an email confirmation for a successfully created account. To find out how to make a purchase, proceed to the next section.</p>
+            </div>
+          </li>
+
+          <!-- second question -->
+          <li>
+            <a href="#" class="toggle">How do I make a purchase?</a>
+            <div class="inner">
+              <p><strong>Step 1.</strong> Click on the <strong>Watch</strong> button on the content you wish to watch and wait for the login form to appear. Login with your credentials (email and password).</p>
+              <p><strong>Step 2.</strong> Select the desired price option from the dropdown menu.</p>
+              <p><strong>Step 3.</strong> Enter the required information.</p>
+              <p><strong>Step 4.</strong> Press the <strong>Pay</strong> button.</p>
+              <p>You will immediately receive access and an email confirming your purchase. In case the page does not load, please press the refresh button.</p>
+            </div>
+          </li>
+
+          <!-- third question -->
+          <li>
+            <a href="#" class="toggle">How do I login and watch?</a>
+            <div class="inner">
+              <p><strong>Step 1.</strong> Click on the <strong>Log in</strong> button in the top right corner or on the <strong>Watch</strong> button on the content you wish to watch.</p>
+              <p><strong>Step 2.</strong> On the form that appears, enter your login credentials (email and password).</p>
+              <p><strong>Step 3.</strong> Click on <strong>Login.</strong></p>
+              <p>The page will then refresh and if you have already purchased, the paywall will disappear. If you haven't purchased, please follow the guidelines above on <strong>How do I make a purchase.</strong></p>
+            </div>
+          </li>
+
+          <!-- fourth question -->
+          <li>
+            <a href="#" class="toggle">How do I reset my password?</a>
+            <div class="inner">
+              <p><strong>Step 1.</strong> Navigate to the login form by clicking on the <strong>Watch</strong> button or on the <strong>Log in</strong>button in the top right corner.</p>
+              <p><strong>Step 2.</strong> Press the <strong>Forgot Password</strong> button below the password field on the login screen.</p>
+              <p><strong>Step 3.</strong> Enter your <strong>email address</strong> and press the <strong>Submit</strong> button.</p>
+              <p><strong>Step 4.</strong> Leave the tab with the form open. In a new tab check your email for a <strong>Token</strong> that you can use to update your password.</p>
+              <p><strong>Step 5.</strong> Copy and paste the <strong>Token</strong> along with your <strong>New Password</strong> and press the <strong>Submit</strong> button.</p>
+              <p>Your password will be updated. Please login with your email address and new password.</p>
+              <p>If you do not receive a password reset token please contact us at <a>support@inplayer.com.</a></p>
+            </div>
+          </li>
+
+          <!-- fifth question -->
+          <li>
+            <a href="#" class="toggle">Can I watch on multiple devices with my account?</a>
+            <div class="inner">
+              <p>Yes.</p>
+            </div>
+          </li>
+
+        </ul>
+
+
+
+      </div> <!-- faq-info -->
+    </div>    <!-- faq -->
+
+    <div id="footer" class="bg-dark">
+          <h2>Let's get in touch</h2>
+          <!-- <span class="divider"></span> -->
+          <div class="">
+            <p>Still having trouble watching the stream, or purchasing your ticket? <br> Don’t hesitate to contact our support team at <a class="link" href="mailto:support@inplayer.com">support@inplayer.com</a> </p>
+          </div>
+          <div class="social-icons">
+              <a href="https://www.facebook.com/BritishEcolSoc" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+                <!-- <img src="img/icons/fb.svg" alt="facebook icon"> -->
+              </a>
+              <a href="https://twitter.com/BritishEcolSoc" target="_blank">
+                <i class="fab fa-twitter"></i>
+                <!-- <img src="img/icons/tw.svg" alt="twitter icon"> -->
+              </a>
+              <a href="https://www.instagram.com/britishecolsoc/" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <!-- <img src="img/icons/ig.svg" alt="instagram icon"> -->
+              </a>
+              <a href="https://www.youtube.com/channel/UCSKrKmlIapq7uWRsH6vdb0Q/feed" target="_blank">
+                <i class="fab fa-youtube"></i>
+                <!-- <img src="img/icons/yt.svg" alt="youtube icon"> -->
+              </a>
+              <a href="https://soundcloud.com/besjournals" target="_blank">
+                <i class="fab fa-soundcloud"></i>
+                <!-- <img src="img/icons/sc.svg" alt="soundcloud icon"> -->
+              </a>
+            </div>
+
+        <p id="ip">Powered by InPlayer</p>
+      </div>
+
+  <!-- back to top button -->
+  <a href="#home" class="back-to-top">
+    <i class="fa fa-chevron-circle-up"></i>
+  </a>
+
+
+
+
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/creative.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
+
+    <script type="text/javascript">
+
+    var paywall = new InplayerPaywall('cc0cb013-9b32-4e3d-a718-8f9b69d49908',[{ id: getParameterByName('id')
+        } ]);
+
+       $('#preview-item').html('<div id="inplayer-'+getParameterByName('id')+'" class="inplayer-paywall"></div>');
+
+
+       $('.inplayer-paywall-logout').hide();
+
+          paywall.on('authenticated', function(){
+            $('.inplayer-paywall-login').parent().hide();
+             $('.inplayer-paywall-logout').parent().show();
+          });
+
+            paywall.on('logout', function(){
+              location.reload();
+            });
+
+    function createItemElement(id, metadata)
+    {
+        var item = {};
+        for(var j=0; j<metadata.length; j++)
+        {
+            item[metadata[j].name] = metadata[j].value;
+        }
+
+        var is_active = getParameterByName('id')==id ? ' active' : '';
+
+        var output = '<a href="./item.html?id='+id+'" class="overlay-link"><div class="package-item"><div class="content" style="background-image:url('+item.paywall_cover_photo+')">';
+          output += '</div><div class="item-label">';
+          output += item.preview_title;
+          output += item.preview_description;
+          // output += '<a href="./item.html?id='+id+'" class="buy-btn outline">' + item.preview_button_label + '</a>';
+          output += '</div></div></a>';
+        return output;
+    }
+
+    $(function(){
+        $.get(config.service_url + '/items/packages/' + config.package_id + '/items', function(response){
+            var output = '';
+            for(var i=0; i<response.collection.length; i++)
+            {
+                var item = response.collection[i];
+                output += createItemElement(item.id, item.metadata);
+
+            }
+            $('#package-items').html(output);
+        });
+    });
+
+
+
+
+    </script>
+  </body>
+</html>
