@@ -148,6 +148,7 @@ h1.title, h2.title, h3.title {
 
   background-color: rgba(255,255,255,.9);
   color: #222;
+  border:none;
 
   &:hover, &:active, &:focus{
     background-color: rgba(255,255,255,1);

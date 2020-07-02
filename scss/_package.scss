@@ -10,6 +10,9 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+      .package-items {
+        width: 100%;
+      }
 
       .package-item {
         position: relative;

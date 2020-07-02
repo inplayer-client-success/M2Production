@@ -156,6 +156,7 @@ h1.title, h2.title, h3.title {
 .white-btn {
   background-color: rgba(255, 255, 255, 0.9);
   color: #222;
+  border: none;
 }
 
 .white-btn:hover, .white-btn:active, .white-btn:focus {
@@ -305,7 +306,7 @@ a.link {
   height: 100%;
   width: 100%;
   text-align: center;
-  padding: 20px 50px;
+  padding: 100px 50px 20px;
   position: relative;
 }
 
@@ -591,6 +592,10 @@ a.link {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.package-container .package .package-items {
+  width: 100%;
 }
 
 .package-container .package .package-item {
