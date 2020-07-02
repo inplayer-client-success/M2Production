@@ -1,6 +1,9 @@
-
+.asset{
+  max-width: 700px;
+  margin: 0 auto;
+}
 #preview-item{
-  padding: 110px 20px 20px;
+  padding: 20px;
 
   .inplayer-preview-box{
       padding: 0;
@@ -10,6 +13,7 @@
       border: 2px solid #fff;
 
       .inplayer-imageholder{
+        background: none;
         .inplayer-paywallexplain{
           display: none;
         }
@@ -18,9 +22,13 @@
       .inplayer-itemdetails{
         width: 100%;
         color: #111;
-        bottom: 140px;
+        padding: 20px;
 
         .inplayer-title{
+          font-family: $font1;
+          color: #111;
+          font-weight: 600;
+          
           p, h1, h2, h3{
             font-family: $font1;
             color: #111;

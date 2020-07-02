@@ -579,7 +579,7 @@ a.link {
   margin: 10px;
 }
 
-.package-container .package #package-items {
+.package-container .package {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -588,20 +588,42 @@ a.link {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.package-container .package #package-items .package-item {
+.package-container .package .package-item {
   position: relative;
-  width: 285px;
+  width: 100%;
+  max-width: 285px;
   background-color: #fff;
   margin-bottom: 20px;
   border: 1px solid #f1f1f1;
   -webkit-transition: 0.2s all ease-out;
   -webkit-transition: 0.2s all  ease-out;
   transition: 0.2s all  ease-out;
+  display: inline-block;
 }
 
-.package-container .package #package-items .package-item .content {
+.package-container .package .package-item:hover {
+  -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1);
+}
+
+@supports (display: grid) {
+  .package-container .package #package-items {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(230px, 1fr))[auto-fill];
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  }
+  .package-container .package .package-item {
+    width: 100%;
+  }
+}
+
+.package-container .package .content {
   height: 200px;
   padding: 10px;
   background-size: cover;
@@ -609,19 +631,19 @@ a.link {
   position: relative;
 }
 
-.package-container .package #package-items .package-item .content.active {
+.package-container .package .content.active {
   opacity: 0.6;
 }
 
-.package-container .package #package-items .package-item .item-label {
-  color: #222;
+.package-container .package .item-label {
+  color: var(--primary);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   line-height: 23px;
   text-align: left;
   z-index: 11;
-  padding: 0px 23px 12px;
+  padding: 15px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -629,20 +651,19 @@ a.link {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.package-container .package #package-items .package-item .item-label h3 {
   font-family: "Raleway", sans-serif;
   font-weight: 600;
   font-size: 19px;
 }
 
-.package-container .package #package-items .package-item .item-label p {
-  font-family: "Roboto", sans-serif;
-  color: #616161;
+.package-container .package .item-label h1, .package-container .package .item-label h2, .package-container .package .item-label h3, .package-container .package .item-label h4, .package-container .package .item-label p {
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  font-size: 19px;
+  margin: 0;
 }
 
-.package-container .package #package-items .package-item .item-label .buy-btn {
+.package-container .package .item-label .buy-btn {
   color: var(--primary);
   padding: 0;
   text-transform: capitalize;
@@ -651,17 +672,17 @@ a.link {
   transition: 0.2s all  ease-out;
 }
 
-.package-container .package #package-items .package-item .item-label .buy-btn:hover, .package-container .package #package-items .package-item .item-label .buy-btn:active, .package-container .package #package-items .package-item .item-label .buy-btn:focus {
+.package-container .package .item-label .buy-btn:hover, .package-container .package .item-label .buy-btn:active, .package-container .package .item-label .buy-btn:focus {
   text-decoration: underline;
 }
 
-.package-container .package #package-items .package-item:hover {
-  -webkit-box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.1);
+.asset {
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 #preview-item {
-  padding: 110px 20px 20px;
+  padding: 20px;
 }
 
 #preview-item .inplayer-preview-box {
@@ -672,6 +693,10 @@ a.link {
   border: 2px solid #fff;
 }
 
+#preview-item .inplayer-preview-box .inplayer-imageholder {
+  background: none;
+}
+
 #preview-item .inplayer-preview-box .inplayer-imageholder .inplayer-paywallexplain {
   display: none;
 }
@@ -679,7 +704,13 @@ a.link {
 #preview-item .inplayer-preview-box .inplayer-itemdetails {
   width: 100%;
   color: #111;
-  bottom: 140px;
+  padding: 20px;
+}
+
+#preview-item .inplayer-preview-box .inplayer-itemdetails .inplayer-title {
+  font-family: "Raleway", sans-serif;
+  color: #111;
+  font-weight: 600;
 }
 
 #preview-item .inplayer-preview-box .inplayer-itemdetails .inplayer-title p, #preview-item .inplayer-preview-box .inplayer-itemdetails .inplayer-title h1, #preview-item .inplayer-preview-box .inplayer-itemdetails .inplayer-title h2, #preview-item .inplayer-preview-box .inplayer-itemdetails .inplayer-title h3 {
