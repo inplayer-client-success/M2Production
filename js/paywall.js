@@ -1,86 +1,129 @@
-
-
 var config = {
-    package_id: "106108",
-    service_url: "https://services.inplayer.com"
+    packages: ["106108"],
+    service_url: "https://services.inplayer.com",
+    merchant_uuid: "cc0cb013-9b32-4e3d-a718-8f9b69d49908"
 }
 
 window.addEventListener('load', (event) => {
-    var paywall = new InplayerPaywall('cc0cb013-9b32-4e3d-a718-8f9b69d49908', [{
-        id: getParameterByName('id')
-      }]);
-    var paywall = new InplayerPaywall('cc0cb013-9b32-4e3d-a718-8f9b69d49908', []);
-    $(".inplayer-paywall-login").click(function () {
-        paywall.showPaywall({
-            asset: {}
+
+    var paywall = new InplayerPaywall(config.merchant_uuid, []);
+
+    config.packages.forEach((package, i) => {
+
+        $.get(config.service_url + "/items/packages/" + package, (response) => {
+
+            var _this = response;
+
+            $.get(config.service_url + "/items/packages/" + package + "/items?limit=500", (response) => {
+
+                var output = "";
+
+                for (var i = 0; i < response.collection.length; i++) {
+
+                    let asset = response.collection[i];
+                    var assetPhoto = asset.metahash.paywall_cover_photo;
+                    var assetDesc = asset.metahash.preview_description;
+
+                    output += createItemElement(asset.id, assetPhoto, asset.title, assetDesc);
+                }
+
+                if (response.collection.length) {
+                    document.getElementById("packages").innerHTML += renderPackage(package, _this.title, output);
+                }
+            }); 
         });
     });
-    $(".inplayer-paywall-logout").hide();
-    paywall.on("authenticated", function () {
-      $(".inplayer-paywall-login").hide();
-      $(".inplayer-paywall-logout").show();
+
+    // display item preview on item.html
+    if (getParameterByName('id')) {
+        setTimeout(() => {
+            showItemElement(getParameterByName('id'));
+        }, 100);
+    }
+
+    $(".inplayer-paywall-login").click(function () {
+        paywall.showPaywall({
+            asset: {}
+        });
     });
+
     paywall.on('inject', function () {
         $(".inplayer-paywall").addClass('responsive-iframe');
-    });
-});
-
-var paywall = new InplayerPaywall('cc0cb013-9b32-4e3d-a718-8f9b69d49908', [{
-    id: getParameterByName('id')
-  }]);
-
-// CREATE PACKAGE ASSET
-function createItemElement(assetId, assetPhoto, assetTitle) {
-
-    var output = `<a href="./item.html?id=${assetId}" class="overlay-link"><div class="package-item"><div class="content" style="background-image:url(${assetPhoto})"></div><div class="item-label">${assetTitle}</div></div></a>`;
-
-
-    // var output =
-    //     `<div class="package-item"><div class="content" style="background-image:url(${assetPhoto})"><span class="overlay"></span></div><div class="item-label"><h4 class="name">${assetTitle}</h4></div><a href="./item.html?id=${assetId}" class="overlay-link"></a></div>`;
-    return output;
-}
-
-
-$(function () {
-
-    // document.onload = () => {
-    //     paywall.showPaywall({asset: 104824})
-    // }
-
-
-
-    $('.inplayer-paywall-logout').parent().hide();
-
-    paywall.on('authenticated', function () {
-        $('.inplayer-paywall-login').parent().hide();
-        $('.inplayer-paywall-logout').parent().show();
+        $('.asset').addClass('video-wrapper');
     });
 
-    paywall.on('logout', function () {
+    $(".inplayer-paywall-logout").hide();
+
+    paywall.on("authenticated", function () {
+        $(".inplayer-paywall-login").hide();
+        $(".inplayer-paywall-logout").show();
+    }); 
+
+    paywall.on("logout", function () {
         location.reload();
     });
 
-    // GET PACKAGE ITEMS INFO AND CREATE ITEM
-    $.get(
-        `${config.service_url}/items/packages/${config.package_id}/items?limit=500`,
-        response => {
+});
 
-            var output = "";
+function getParameterByName(name, url) {
 
-            for (var i = 0; i < response.collection.length; i++) {
-                var asset = response.collection[i];
+	if (!url) url = window.location.href;
+  
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	  results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
 
-                var assetId = asset.id;
-                var assetPhoto = asset.metahash.paywall_cover_photo;
-                var assetTitle = asset.title;
-                output += createItemElement(assetId, assetPhoto, assetTitle);
+function createItemElement(assetId, assetPhoto, assetTitle, assetDesc) {
 
-                document.getElementById(
-                    `package-items-${config.package_id}`
-                ).innerHTML = output;
-            } // for
+  var output = '<a href="./item.html?id='+ assetId +'" class="overlay-link"><div class="package-item"><div class="content" style="background-image:url('+ assetPhoto +')">';
 
-        }); // get items
+  output += '</div><div class="item-label"><div class="name">';
+  output += '<h3>' + assetTitle + '</h3>';
+  output += '<div class="assetDesc">'+ assetDesc +'</div>';
+  output += "</div>";
+  output += "</div></div></a>";
+  
+  return output;
 
+}
 
-})
+function showItemElement(assetId) {
+        
+    $('#preview-item').html('<div id="inplayer-' + assetId + '" class="inplayer-paywall"></div>');
+    
+    var paywall = new InplayerPaywall(config.merchant_uuid, [{
+        id: assetId
+      }]);
+  
+}
+
+function renderPackage (packageID, packageTitle, insideHtml) {
+
+    var html = 
+    // '<h3>'+ packageTitle +'</h3>' +
+    '<div id="'+ packageID +'" class="package-items">'+ insideHtml +'</div>';
+
+    return html;
+}
+
+function getAsset () {
+	
+	var className = document.getElementsByClassName('get-asset');
+
+	for (var i = 0 ; i < className.length; i++) {
+		className[i].addEventListener('click', function (ev) {
+			ev.preventDefault();
+			var assetId = this.getAttribute('asset-id');
+
+			paywall.showPaywall({
+			  asset: {
+			    assetId: parseInt(assetId)
+			  }
+			});
+		});
+	}
+}
